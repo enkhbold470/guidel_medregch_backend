@@ -32,7 +32,6 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.AWS_PORT }}
           source: "docker-compose.yml"
           target: "~/docker-compose.yml"
 
@@ -42,7 +41,6 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.AWS_PORT }}
           source: "./backend"
           target: "~/backend"
 
@@ -52,7 +50,6 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ${{ secrets.AWS_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.AWS_PORT }}
           script: |
             cd ~
             docker-compose pull
