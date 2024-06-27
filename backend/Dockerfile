@@ -12,7 +12,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the application code to the working directory
 COPY . .
-
+# Set the environment variable for the timezone
+ENV TZ=America/Los_Angeles
 # Set the environment variable for the MongoDB URL
 # ENV MONGODB_URL=<your_mongodb_url_here>
 
