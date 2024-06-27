@@ -10,6 +10,7 @@ Welcome to the ESP32 IoT project repository! This project combines the power of 
 - Postman
 - DigitalOcean Account
 - ThingSpeak API
+- Docker
 
 **Big Roadblocks we encountered and overcame:**
 
