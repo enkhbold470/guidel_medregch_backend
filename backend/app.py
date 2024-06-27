@@ -4,7 +4,7 @@ import datetime
 import time
 import pymongo
 
-myclient = pymongo.MongoClient(os.environ.get("MONGODB_URL"))
+myclient = pymongo.MongoClient("mongo:27017")
 mydb = myclient["iot_database"]
 mycol = mydb["sensor_logs"]
 
