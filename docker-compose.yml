@@ -1,14 +1,12 @@
 services:
   frontend:
-    build: ./frontend
+    build: enkhbold470/guidel_medregch_backend-frontend
     ports:
       - "3000:3000"
   backend:
-    build: ./backend
+    build: enkhbold470/guidel_medregch_backend-backend
     ports:
       - "5000:5000"
-    volumes:
-      - ./backend:/app
     depends_on:
       - mongo
   mongo:
