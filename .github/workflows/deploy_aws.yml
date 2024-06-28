@@ -24,33 +24,5 @@ jobs:
 
       - name: Build and push Docker images
         run: |
-          docker buildx build --push --tag ${{ secrets.DOCKERHUB_USERNAME }}/backend:latest ./backend
-
-      - name: Copy Docker Compose file to EC2
-        uses: appleboy/scp-action@v0.1.1
-        with:
-          host: ${{ secrets.AWS_HOST }}
-          username: ${{ secrets.AWS_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "docker-compose.yml"
-          target: "~/docker-compose.yml"
-
-      - name: Copy backend directory to EC2
-        uses: appleboy/scp-action@v0.1.1
-        with:
-          host: ${{ secrets.AWS_HOST }}
-          username: ${{ secrets.AWS_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "./backend"
-          target: "~/backend"
-
-      - name: SSH into EC2 and deploy
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.AWS_HOST }}
-          username: ${{ secrets.AWS_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ~
-            docker-compose pull
-            docker-compose up -d --build
+          docker buildx build --push --tag ${{ secrets.DOCKERHUB_USERNAME }}/guidel_medregch_backend-backend:latest ./backend
+          docker buildx build --push --tag ${{ secrets.DOCKERHUB_USERNAME }}/guidel_medregch_backend-frontend:latest ./frontend
