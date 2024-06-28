@@ -2,7 +2,7 @@ services:
   frontend:
     image: enkhbold470/guidel_medregch_backend-frontend
     ports:
-      - "3000:3000"
+      - "80:3000"
   backend:
     image: enkhbold470/guidel_medregch_backend-backend
     ports:
